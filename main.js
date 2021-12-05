@@ -45,6 +45,7 @@ client.on('message', async msg => {
             var date = new Date();
             //you can use the check below to set a time in which the bot stops sending response messages
             //anything above == 23 will make the bot always responed with the message
+            //currently set to between 12AM and 1AM aka. 0(or 24, idk man i don't use 24 hour format) to 1
             if(date.getHours() == 0 ){
                 console.log("private msg inside active hours -> ignoring")
             }else if(msg.from == "status@broadcast") { //this is used so that the bot doesn't try to respond to status updates
