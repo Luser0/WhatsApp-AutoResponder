@@ -1,0 +1,14 @@
+{
+  "name": "wa-autoresponder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "luser",
+  "license": "ISC",
+  "dependencies": {
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#multidevice"
+  }
+}
