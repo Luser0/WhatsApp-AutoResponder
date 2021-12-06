@@ -72,7 +72,6 @@ client.on('message_create', (msg) => {
         }else if(msg.type == "revoked"){
             console.log('someone deleted a message -> ignoring');
         }else if (msg.fromMe){
-            console.log("msg here")
             if (msg.body =="!whitelist"){
                 writetxtline("whitelist.txt",msg.to)
                 console.log("added",msg.to,"to the whitelist")
