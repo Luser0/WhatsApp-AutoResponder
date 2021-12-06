@@ -49,7 +49,7 @@ async function readtxtlines(filename) {
         console.log("Error", e);
     }
 }
-
+//another variation that writes new lines to a txt file (currently only used for whitelisting)
 async function writetxtline(filename,towrite) {
     let filehandle = null;
     try {
