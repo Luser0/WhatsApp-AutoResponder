@@ -77,9 +77,16 @@ client.on('message_create', (msg) => {
             console.log('someone deleted a message -> ignoring');
         }else if (msg.fromMe){
             if (msg.body =="!whitelist"){
-                writetxtline("whitelist.txt",msg.to)
-                console.log("added",msg.to,"to the whitelist")
-                msg.reply("added to the whitelist")
+                readtxtlines("whitelist.txt").then(function(lines){
+                    if (lines.includes(msg.to)){
+                        console.log("number",msg.to,"is already on whitelist")
+                        msg.reply("already on the whitelist")
+                    }else{
+                        writetxtline("whitelist.txt",msg.to)
+                        console.log("added",msg.to,"to the whitelist")
+                        msg.reply("added to the whitelist")
+                    }
+                })
             }else if(msg.body == "!rmwhitelist"){
                 removetxtline("whitelist.txt", msg.to)
                 console.log("removed ",msg.to,"from the whitelist")
