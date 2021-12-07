@@ -88,9 +88,16 @@ client.on('message_create', (msg) => {
                     }
                 })
             }else if(msg.body == "!rmwhitelist"){
-                removetxtline("whitelist.txt", msg.to)
-                console.log("removed ",msg.to,"from the whitelist")
-                msg.reply("removed from the whitelist")
+                readtxtlines("whitelist.txt").then(function(lines){
+                    if (lines.includes(msg.to)){
+                        removetxtline("whitelist.txt", msg.to)
+                        console.log("removed ",msg.to,"from the whitelist")
+                        msg.reply("removed from the whitelist")
+                    }else{
+                        console.log("number",msg.to,"is not on the whitelist")
+                        msg.reply("not on the whitelist")
+                    }
+                })
             }
         }else if (!inGroup.isGroup){
             var date = new Date();
