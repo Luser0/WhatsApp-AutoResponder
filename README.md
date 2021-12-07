@@ -4,5 +4,5 @@ a js noob implementation of [whatsapp-web.js](https://github.com/pedroslopez/wha
 TO DO:
 
  1. ~~add a whitelist~~
- 2. add the ability to remove contacts from the whitelist directly form whatsapp
+ 2. ~~add the ability to remove contacts from the whitelist directly form whatsapp~~
  3. documentation on how to use and the features available

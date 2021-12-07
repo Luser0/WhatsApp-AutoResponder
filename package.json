@@ -9,6 +9,7 @@
   "author": "luser",
   "license": "ISC",
   "dependencies": {
+    "replace": "^1.2.1",
     "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#multidevice"
   }
 }

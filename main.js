@@ -2,6 +2,7 @@
 const { Client, ChatTypes } = require('whatsapp-web.js');
 const client = new Client({ puppeteer: { headless: false }, clientId: 'example' });
 const fsPromises = require('fs').promises;
+var replace = require("replace");
 client.initialize();
 client.on('qr', (qr) => {
     console.log('QR RECEIVED', qr);
@@ -63,6 +64,9 @@ async function writetxtline(filename,towrite) {
     }
 }
 //
+async function removetxtline(filename,toremove){
+    await replace({regex: toremove + "\n" , replacement: "", paths: ['./',filename],recursive: false,silent: true})
+};
 
 
 client.on('message_create', (msg) => {
@@ -77,8 +81,9 @@ client.on('message_create', (msg) => {
                 console.log("added",msg.to,"to the whitelist")
                 msg.reply("added to the whitelist")
             }else if(msg.body == "!rmwhitelist"){
-                //removes the contact from whitelist
-                //will work on it
+                removetxtline("whitelist.txt", msg.to)
+                console.log("removed ",msg.to,"from the whitelist")
+                msg.reply("removed from the whitelist")
             }
         }else if (!inGroup.isGroup){
             var date = new Date();
