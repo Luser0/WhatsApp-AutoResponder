@@ -1,5 +1,5 @@
 # WhatsApp AutoResponder
-a js noob implementation of [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) to auto respond to any message received
+An implementation of [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js) to auto respond to any message received
 
 TO DO:
 
